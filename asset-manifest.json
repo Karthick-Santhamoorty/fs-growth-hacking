@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/fs-growth-hacking/static/css/main.b198607a.css",
-    "main.js": "/fs-growth-hacking/static/js/main.3f87f47f.js",
+    "main.js": "/fs-growth-hacking/static/js/main.a577c51f.js",
     "static/js/787.b404517d.chunk.js": "/fs-growth-hacking/static/js/787.b404517d.chunk.js",
     "index.html": "/fs-growth-hacking/index.html",
     "main.b198607a.css.map": "/fs-growth-hacking/static/css/main.b198607a.css.map",
-    "main.3f87f47f.js.map": "/fs-growth-hacking/static/js/main.3f87f47f.js.map",
+    "main.a577c51f.js.map": "/fs-growth-hacking/static/js/main.a577c51f.js.map",
     "787.b404517d.chunk.js.map": "/fs-growth-hacking/static/js/787.b404517d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b198607a.css",
-    "static/js/main.3f87f47f.js"
+    "static/js/main.a577c51f.js"
   ]
 }
