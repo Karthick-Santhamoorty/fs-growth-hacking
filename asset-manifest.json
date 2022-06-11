@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Karthick-Santhamoorty/fs-growth-hacking/static/css/main.b198607a.css",
-    "main.js": "/Karthick-Santhamoorty/fs-growth-hacking/static/js/main.39661cc2.js",
-    "static/js/787.b404517d.chunk.js": "/Karthick-Santhamoorty/fs-growth-hacking/static/js/787.b404517d.chunk.js",
-    "index.html": "/Karthick-Santhamoorty/fs-growth-hacking/index.html",
-    "main.b198607a.css.map": "/Karthick-Santhamoorty/fs-growth-hacking/static/css/main.b198607a.css.map",
-    "main.39661cc2.js.map": "/Karthick-Santhamoorty/fs-growth-hacking/static/js/main.39661cc2.js.map",
-    "787.b404517d.chunk.js.map": "/Karthick-Santhamoorty/fs-growth-hacking/static/js/787.b404517d.chunk.js.map"
+    "main.css": "/fs-growth-hacking/static/css/main.b198607a.css",
+    "main.js": "/fs-growth-hacking/static/js/main.b18779d6.js",
+    "static/js/787.b404517d.chunk.js": "/fs-growth-hacking/static/js/787.b404517d.chunk.js",
+    "index.html": "/fs-growth-hacking/index.html",
+    "main.b198607a.css.map": "/fs-growth-hacking/static/css/main.b198607a.css.map",
+    "main.b18779d6.js.map": "/fs-growth-hacking/static/js/main.b18779d6.js.map",
+    "787.b404517d.chunk.js.map": "/fs-growth-hacking/static/js/787.b404517d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b198607a.css",
-    "static/js/main.39661cc2.js"
+    "static/js/main.b18779d6.js"
   ]
 }
