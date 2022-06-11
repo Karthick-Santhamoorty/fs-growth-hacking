@@ -5,7 +5,7 @@ import ShowProfile from './components/showProfile';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Routes>
         <Route exact path="/" element={<SearchJob/>}></Route>
         <Route exact path="/viewProfile/:id" element={<ShowProfile/>}></Route>
