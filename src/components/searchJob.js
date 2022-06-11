@@ -124,7 +124,7 @@
         <div className="mt-5 mx-5 border-b-2">
             <div className="mb-3 flex justify-between ">
             <h1 className="text-3xl text-primary select-none font-medium">
-                <span className="font-semibold">FS</span> Growth Hacking
+                <span className="font-semibold">FS</span> Growth Hacking 123
             </h1>
             <button
                 className="text-white    bg-primary rounded-md bg- px-3 py-1 hover:bg-secondary"
