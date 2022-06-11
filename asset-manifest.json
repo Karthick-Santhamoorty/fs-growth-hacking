@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/Karthick-Santhamoorty/fs-growth-hacking/static/css/main.b198607a.css",
-    "main.js": "/Karthick-Santhamoorty/fs-growth-hacking/static/js/main.553c1c61.js",
+    "main.js": "/Karthick-Santhamoorty/fs-growth-hacking/static/js/main.39661cc2.js",
     "static/js/787.b404517d.chunk.js": "/Karthick-Santhamoorty/fs-growth-hacking/static/js/787.b404517d.chunk.js",
     "index.html": "/Karthick-Santhamoorty/fs-growth-hacking/index.html",
     "main.b198607a.css.map": "/Karthick-Santhamoorty/fs-growth-hacking/static/css/main.b198607a.css.map",
-    "main.553c1c61.js.map": "/Karthick-Santhamoorty/fs-growth-hacking/static/js/main.553c1c61.js.map",
+    "main.39661cc2.js.map": "/Karthick-Santhamoorty/fs-growth-hacking/static/js/main.39661cc2.js.map",
     "787.b404517d.chunk.js.map": "/Karthick-Santhamoorty/fs-growth-hacking/static/js/787.b404517d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b198607a.css",
-    "static/js/main.553c1c61.js"
+    "static/js/main.39661cc2.js"
   ]
 }
