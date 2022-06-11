@@ -30,7 +30,7 @@
     const [newJob, setNewJob] = useState("");
     const [apicallHappened, setApiCallHappened] = useState(false);
     const [successMsg, setSuccessMsg] = useState("");
-    const url = "https://4214-2409-4066-e0d-725d-e17e-3a1d-2c6b-806e.ngrok.io";
+    const url = "https://4214-2409-4066-e0d-725d-e17e-3a1d-2c6b-502fe.ngrok.io";
     const regex = new RegExp(/^\d*\.?\d*$/);
 
     const changeHandler = (e) => {
