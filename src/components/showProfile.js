@@ -17,17 +17,17 @@ export default function ShowProfile(props) {
         "Content-Type": "application/json",
       },
     })
-      .then((response) => {
-        if (response.status !== 200) {
-          setErrorFromApi(response.json());
-        } else {
-          return response.json();
-        }
-      })
-      .then((res) => {
-        setCandidateData(res.data[0].candidatedata[0]);
-        setLoading(false);
-      });
+    .then((response) => {
+      if (response.status !== 200) {
+        setErrorFromApi(response.json());
+      } else {
+        return response.json();
+      }
+    })
+    .then((res) => {
+      setCandidateData(res.data[0].candidatedata[0]);
+      setLoading(false);
+    });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
@@ -43,7 +43,7 @@ export default function ShowProfile(props) {
         </div>
       </div>
       {loading ? (
-        <div className="w-full flex items-center h-full justify-center">
+        <div className="w-full flex items-center h-screen justify-center">
           <ThreeDots color="#60C0F6" height={50} width={50} />
         </div>
       ) : (
@@ -65,34 +65,34 @@ export default function ShowProfile(props) {
                 <div className="mr-1">
                   <p className="text-3xl my-5 text-center">Details</p>
                   <div className="grid grid-cols-5">
-                    <div className="col-span-2">
+                    <div className="col-span-1">
                       <p className="text-right text-lg text-fsBlue">Name:</p>
                     </div>
-                    <div className="col-span-3 ml-2">
+                    <div className="col-span-4 ml-2">
                       <p className="text-left text-lg">
                         {candidatedata?._source?.candidateName}
                       </p>
                     </div>
                   </div>
                   <div className="grid grid-cols-5">
-                    <div className="col-span-2">
+                    <div className="col-span-1">
                       <p className="text-right text-lg text-fsBlue">
                         Location:
                       </p>
                     </div>
-                    <div className="col-span-3 ml-2">
+                    <div className="col-span-4 ml-2">
                       <p className="text-left text-lg">
                         {candidatedata?._source?.location}
                       </p>
                     </div>
                   </div>
                   <div className="grid grid-cols-5">
-                    <div className="col-span-2">
+                    <div className="col-span-1">
                       <p className="text-right text-lg text-fsBlue">
-                        Total Experience:
+                        Experience:
                       </p>
                     </div>
-                    <div className="col-span-3 ml-2">
+                    <div className="col-span-4 ml-2">
                       <p className="text-left text-lg">
                         {`${
                           candidatedata?._source?.totalExperience &&
@@ -104,26 +104,26 @@ export default function ShowProfile(props) {
                     </div>
                   </div>
                   <div className="grid grid-cols-5">
-                    <div className="col-span-2">
+                    <div className="col-span-1">
                       <p className="text-right text-lg text-fsBlue">About:</p>
                     </div>
-                    <div className="col-span-3 ml-2">
+                    <div className="col-span-4 ml-2">
                       <p className="text-left text-lg">
                         {candidatedata._source.about}
                       </p>
                     </div>
                   </div>
                   <div className="grid grid-cols-5">
-                    <div className="col-span-2">
+                    <div className="col-span-1">
                       <p className="text-right text-lg text-fsBlue">Title:</p>
                     </div>
-                    <div className="col-span-3 ml-2">
+                    <div className="col-span-4 ml-2">
                       <p className="text-left text-lg">
                         {candidatedata._source.title}
                       </p>
                     </div>
                   </div>
-                  <div className="grid grid-cols-5">
+                  <div className="grid grid-cols-6">
                     <div className="col-span-2">
                       <p className="text-right text-lg text-fsBlue">Current Job Title:</p>
                     </div>
@@ -133,7 +133,7 @@ export default function ShowProfile(props) {
                       </p>
                     </div>
                   </div>
-                  <div className="grid grid-cols-5">
+                  <div className="grid grid-cols-6">
                     <div className="col-span-2">
                       <p className="text-right text-lg text-fsBlue">Current Job Type:</p>
                     </div>
@@ -143,7 +143,7 @@ export default function ShowProfile(props) {
                       </p>
                     </div>
                   </div>
-                  <div className="text-center mt-5">
+                  <div className="mt-5 flex justify-center items-center">
                     <a
                       href={candidatedata?._source?.userUrl}
                       className="text-center text-xl text-primary"
@@ -151,6 +151,11 @@ export default function ShowProfile(props) {
                     >
                       Go to LinkedIn
                     </a>
+                      <span className="ml-2">
+                        <svg width="10" height="10" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M0.125 7.99375L6.74375 1.375H2.625V0.125H8.875V6.375H7.625V2.25625L1.00625 8.875L0.125 7.99375Z" fill="#213251"/>
+                        </svg>
+                      </span>
                   </div>
                 </div>
               </div>
