@@ -30,7 +30,7 @@
     const [newJob, setNewJob] = useState("");
     const [apicallHappened, setApiCallHappened] = useState(false);
     const [successMsg, setSuccessMsg] = useState("");
-    const url = "https://4214-2409-4066-e0d-725d-e17e-3a1d-2c6b-502fe.ngrok.io";
+    const url = "https://04c8-2409-4066-8f-8277-75be-a6d7-336a-534c.ngrok.io";
     const regex = new RegExp(/^\d*\.?\d*$/);
 
     const changeHandler = (e) => {
@@ -383,7 +383,7 @@
                             src={`${
                             res?._source?.profileImg !== "None"
                                 ? res._source.profileImg
-                                : "./images/user-image.png"
+                                : "/fs-growth-hacking/images/user-image.png"
                             }`}
                             alt="User"
                             className="w-52 mx-auto"

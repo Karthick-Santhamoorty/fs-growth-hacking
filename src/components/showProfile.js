@@ -5,7 +5,7 @@ import { Link, useParams } from "react-router-dom";
 
 export default function ShowProfile(props) {
   const { id } = useParams();
-  const url = "https://4214-2409-4066-e0d-725d-e17e-3a1d-2c6b-502f.ngrok.io";
+  const url = "https://04c8-2409-4066-8f-8277-75be-a6d7-336a-534c.ngrok.io";
   const [errorFromApi, setErrorFromApi] = useState();
   const [loading, setLoading] = useState(true);
   const [candidatedata, setCandidateData] = useState();
@@ -27,6 +27,7 @@ export default function ShowProfile(props) {
     .then((res) => {
       setCandidateData(res.data[0].candidatedata[0]);
       setLoading(false);
+      window.scrollTo(0, 0);
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
