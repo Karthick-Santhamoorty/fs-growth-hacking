@@ -1,0 +1,186 @@
+import DefaultPage from "../../components/layout/defaultPage";
+import { useForm } from "react-hook-form";
+import { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import PulseLoader from "react-spinners/PulseLoader";
+import { login } from "../../service/api";
+import { getUser } from "../../service/getUser";
+
+export default function Login(props) {
+  const navigate = useNavigate();
+  useEffect(() => {
+    const user = getUser();
+    if(user?.isLoggedIn && user?.access_token) navigate("/dashboard");
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[])
+  const [postObj, setPostObj] = useState({
+    email_address: "",
+    password: "",
+  });
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useForm({
+    mode: "all",
+  });
+  const submit = async() => {
+    setLoading(true);
+    const response = await login(postObj);
+    if(response.status === 200){
+        setApiResponse({ msg:`${response.Message}`, class:"bg-aliceBlue" });
+        setLoading(false);
+        setPostObj({
+          email_address: "",
+          password: "",
+        });
+        localStorage.setItem("growthHackUser",JSON.stringify({isLoggedIn:true, ...response?.data[0]?.user}));
+        navigate("/dashboard");
+    }
+    else if(response.status === 400){
+        setApiResponse({ msg:response.Message, class:"bg-floralWhite" });
+        setLoading(false);
+    }
+    else{
+        setApiResponse({ msg:"Something went wrong!!!", class:"bg-floralWhite" });
+        setLoading(false);
+    }
+  }
+  const [apiResponse, setApiResponse] = useState(null);
+  const [loading, setLoading] =  useState(false);
+
+  const onChangeHandler = (e) => setPostObj({ ...postObj, [e.target.name]: e.target.value });
+  const checkInput = true;
+  return (
+    <DefaultPage>
+      <div className="grid grid-cols-4">
+        <div className="col-span-2 mt-5">
+        <div className="mb-3 flex justify-between border-b">
+          <h1 className="text-3xl text-primary select-none font-medium mb-2">
+            <span className="font-semibold">FS</span> Growth Hacking
+          </h1>
+        </div>
+          <div className="mb-4 px-8">
+            <h2 className="font-bold text-primaryBlue text-2xl">Sign in</h2>
+          </div>
+          <form onSubmit={handleSubmit(submit)}>
+            <div className="border-b px-8">
+              <fieldset className="my-5">
+                <div className="w-full font-semibold mb-2 text-primaryBlue text-base">
+                  {`Email  `}
+                  <span className="text-lg text-red-500 font-bold">{"*"}</span>
+                </div>
+                <input
+                  type="email"
+                  value={postObj?.email_address}
+                  className={`w-full placeholder-grayDeep rounded text-lg outline-none py-2 px-2 border focus:border-primaryBlue ${
+                    errors?.email_address && "border-red-500"
+                  }`}
+                  placeholder={`Enter your email address`}
+                  id="email_address"
+                  name="email_address"
+                  {...register("email_address", {
+                    required: {
+                      value: true,
+                      message: "* E-mail is mandatory",
+                    },
+                    maxLength: {
+                      value: 300,
+                      message: "* Invalid Email Id",
+                    },
+                    minLength: {
+                      value: 6,
+                      message: "* Invalid Email Id",
+                    },
+                    pattern: {
+                      value:
+                        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+                      message: "* Invalid email format",
+                    },
+                  })}
+                  onChange={(e) => onChangeHandler(e)}
+                />
+                {errors.email_address && (
+                  <span className="text-xs text-red-500 font-medium">
+                    {errors?.email_address?.message}
+                  </span>
+                )}
+              </fieldset>
+              <fieldset className="my-5">
+                <div className="w-full font-semibold mb-2 text-primaryBlue text-base">
+                  {`Password  `}
+                  <span className="text-lg text-red-500 font-bold">{"*"}</span>
+                </div>
+                <input
+                  type="password"
+                  value={postObj?.password}
+                  className={`w-full placeholder-grayDeep rounded text-lg outline-none py-2 px-2 border focus:border-primaryBlue ${
+                    errors?.password && "border-red-500"
+                  }`}
+                  placeholder={`Enter your password`}
+                  id="password"
+                  name="password"
+                  {...register("password", {
+                    required: {
+                      value: true,
+                      message: "* Password is mandatory",
+                    },
+                    maxLength: {
+                      value: 30,
+                      message: "* Maximum 30 characters allowed",
+                    },
+                    minLength: {
+                      value: 4,
+                      message: "* Minimum 8 characters required",
+                    },
+                  })}
+                  onChange={(e) => onChangeHandler(e)}
+                />
+                {errors.password && (
+                  <span className="text-xs text-red-500 font-medium">
+                    {errors.password.message}
+                  </span>
+                )}
+              </fieldset>
+              {apiResponse && 
+                <div className="w-full mt-3">
+                <div className={`border border-grayLight p-3 flex items-center mb-2 ${apiResponse?.class}`}>
+                  <p className="text-sm text-left text-black font-light">{`${apiResponse?.msg}`}</p>
+                </div>
+              </div>
+              }
+              <div className="flex justify-start items-center mt-7">
+                <button
+                  className={`text-lg  px-3 py-2 w-1/5 rounded ${
+                    !checkInput || loading
+                    ? "text-textDisabled bg-bgDisabled pointer-events-none"
+                    : "bg-primary hover:bg-primaryBlue text-white"
+                  }`}
+                >
+                  {loading?
+                  <PulseLoader
+                    color="#fff"
+                    size={10}
+                  />
+                  : 
+                  "Login"
+                  }
+                </button>
+              </div>
+                <p className="text-black font-medium text-base my-3">New User?
+                    <Link className="text-primaryBlue font-semibold underline text-base ml-2" to="/register">Register</Link>
+                </p>
+            </div>
+          </form>
+        </div>
+        <div className="col-span-2">
+          <img
+            src={`${process.env.PUBLIC_URL}/images/growth-hacking-auth-4.jpeg`}
+            alt="cover-img"
+            className="w-full h-screen object-fill"
+          />
+        </div>
+      </div>
+    </DefaultPage>
+  );
+}

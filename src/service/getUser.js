@@ -1,0 +1,1 @@
+export const getUser = () => window.localStorage.getItem("growthHackUser")? JSON.parse(window.localStorage.getItem("growthHackUser")): null

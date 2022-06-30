@@ -1,11 +1,11 @@
-import DefaultPage from "./layout/defaultPage";
+import DefaultPage from "../components/layout/defaultPage";
 import { React, useState, useEffect } from "react";
 import { ThreeDots } from "react-loader-spinner";
 import { Link, useParams } from "react-router-dom";
 
 export default function ShowProfile(props) {
   const { id } = useParams();
-  const url = "https://81de-2409-4066-83-e667-849d-4073-6b43-72d5.ngrok.io";
+  const url = process.env.REACT_APP_BE_ENDPOINT;
   const [errorFromApi, setErrorFromApi] = useState();
   const [loading, setLoading] = useState(true);
   const [candidatedata, setCandidateData] = useState();
@@ -38,9 +38,9 @@ export default function ShowProfile(props) {
           <h1 className="text-3xl text-primary select-none font-medium">
             <span className="font-semibold">FS</span> Growth Hacking
           </h1>
-          <Link to={`/`} className="text-lg bg-primary rounded-md bg- px-3 py-1 hover:bg-secondary text-white">
+          <Link to={`/`} className="text-lg bg-primary rounded-md bg- px-3 py-1 hover:bg-primaryBlue text-white">
             Home
-        </Link>
+          </Link>
         </div>
       </div>
       {loading ? (
