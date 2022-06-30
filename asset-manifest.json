@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/FS-SocialHiring/static/css/main.83c01d73.css",
-    "main.js": "/FS-SocialHiring/static/js/main.e79e82de.js",
-    "static/js/787.b404517d.chunk.js": "/FS-SocialHiring/static/js/787.b404517d.chunk.js",
-    "index.html": "/FS-SocialHiring/index.html",
-    "main.83c01d73.css.map": "/FS-SocialHiring/static/css/main.83c01d73.css.map",
-    "main.e79e82de.js.map": "/FS-SocialHiring/static/js/main.e79e82de.js.map",
-    "787.b404517d.chunk.js.map": "/FS-SocialHiring/static/js/787.b404517d.chunk.js.map"
+    "main.css": "/fs-growth-hacking/static/css/main.83c01d73.css",
+    "main.js": "/fs-growth-hacking/static/js/main.91c745b2.js",
+    "static/js/787.b404517d.chunk.js": "/fs-growth-hacking/static/js/787.b404517d.chunk.js",
+    "index.html": "/fs-growth-hacking/index.html",
+    "main.83c01d73.css.map": "/fs-growth-hacking/static/css/main.83c01d73.css.map",
+    "main.91c745b2.js.map": "/fs-growth-hacking/static/js/main.91c745b2.js.map",
+    "787.b404517d.chunk.js.map": "/fs-growth-hacking/static/js/787.b404517d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.83c01d73.css",
-    "static/js/main.e79e82de.js"
+    "static/js/main.91c745b2.js"
   ]
 }
